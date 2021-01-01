@@ -3,12 +3,12 @@ import ReactDOM from "react-dom"
 import "./index.css"
 import App from "./App"
 import reportWebVitals from "./reportWebVitals"
-import { BrowserRouter } from "react-router-dom"
+import { HashRouter } from "react-router-dom"
 
 const AppWithRouter = () => (
-  <BrowserRouter>
+  <HashRouter basename="/">
     <App />
-  </BrowserRouter>
+  </HashRouter>
 )
 
 ReactDOM.render(<AppWithRouter />, document.getElementById("root"))
