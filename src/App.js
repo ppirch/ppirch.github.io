@@ -4,8 +4,7 @@ import { Home, NotFoundPage } from "./pages"
 import { NavBar } from "./components"
 import CssBaseline from "@material-ui/core/CssBaseline"
 
-const About = () => <h1>About</h1>
-const Post = () => <h1>Post</h1>
+const About = () => <h1>About Me</h1>
 const Project = () => <h1>Project</h1>
 
 const RouteWithNavBar = ({ component: Component, ...rest }) => {
@@ -24,8 +23,7 @@ class App extends Component {
         <div className="App container">
           <Switch>
             <RouteWithNavBar path="/" component={Home} exact />
-            <RouteWithNavBar path="/about" component={About} />
-            <RouteWithNavBar path="/posts" component={Post} />
+            <RouteWithNavBar path="/about" component={AboutMe} />
             <RouteWithNavBar path="/projects" component={Project} />
             <Route component={NotFoundPage} exact />
           </Switch>
