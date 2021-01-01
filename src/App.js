@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import { Switch, Route } from "react-router-dom"
 import Home from "./pages"
+
 const About = () => <h1>About</h1>
 const Post = () => <h1>Post</h1>
 const Project = () => <h1>Project</h1>
@@ -10,6 +11,7 @@ const NotFoundPage = () => (
     Page Not Found
   </h1>
 )
+
 class App extends Component {
   render() {
     return (
