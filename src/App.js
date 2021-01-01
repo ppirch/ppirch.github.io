@@ -23,7 +23,7 @@ class App extends Component {
         <div className="App container">
           <Switch>
             <RouteWithNavBar path="/" component={Home} exact />
-            <RouteWithNavBar path="/about" component={AboutMe} />
+            <RouteWithNavBar path="/about" component={About} />
             <RouteWithNavBar path="/projects" component={Project} />
             <Route component={NotFoundPage} exact />
           </Switch>
