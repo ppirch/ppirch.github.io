@@ -1,29 +1,36 @@
 import React, { Component } from "react"
 import { Switch, Route } from "react-router-dom"
-import Home from "./pages"
+import { Home, NotFoundPage } from "./pages"
+import { NavBar } from "./components"
+import CssBaseline from "@material-ui/core/CssBaseline"
 
 const About = () => <h1>About</h1>
 const Post = () => <h1>Post</h1>
 const Project = () => <h1>Project</h1>
-const NotFoundPage = () => (
-  <h1>
-    404 <br />
-    Page Not Found
-  </h1>
-)
 
+const RouteWithNavBar = ({ component: Component, ...rest }) => {
+  return (
+    <Route {...rest}>
+      <NavBar />
+      <Component />
+    </Route>
+  )
+}
 class App extends Component {
   render() {
     return (
-      <div className="App container">
-        <Switch>
-          <Route path="/" component={Home} exact />
-          <Route path="/about" component={About} />
-          <Route path="/posts" component={Post} />
-          <Route path="/projects" component={Project} />
-          <Route component={NotFoundPage} />
-        </Switch>
-      </div>
+      <React.Fragment>
+        <CssBaseline />
+        <div className="App container">
+          <Switch>
+            <RouteWithNavBar path="/" component={Home} exact />
+            <RouteWithNavBar path="/about" component={About} />
+            <RouteWithNavBar path="/posts" component={Post} />
+            <RouteWithNavBar path="/projects" component={Project} />
+            <Route component={NotFoundPage} exact />
+          </Switch>
+        </div>
+      </React.Fragment>
     )
   }
 }
