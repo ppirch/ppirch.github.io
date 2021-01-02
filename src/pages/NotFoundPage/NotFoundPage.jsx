@@ -1,19 +1,14 @@
-import React from "react"
+import React, { Component } from "react"
+var __html = require("./NotFoundPage.html.js")
+var template = { __html: __html }
 
-class NotFoundPage extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = { isNavBarHidden: true }
-  }
-
+class ScreenShare extends Component {
   render() {
     return (
-      <h1>
-        404 <br />
-        Page Not Found
-      </h1>
+      <div className="screen-share">
+        <span dangerouslySetInnerHTML={template} />
+      </div>
     )
   }
 }
-
-export default NotFoundPage
+export default ScreenShare
