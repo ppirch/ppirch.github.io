@@ -24,13 +24,13 @@ const Intro = (props) => {
         Hi, I’m Pirch. Nice to meet you.
       </Typography>
       <Typography className={classes.contentText}>
-        Highly skilled in machine learning, data visualization, and creative
-        thinking. Ability to use data, statistics, machine learning and deep
-        learning techniques for finding complex data patterns that drive
-        meaningful impact on the business. Excellent in Natural Language
-        Processing & Natural Language Understanding. Inventive Front End
-        Development with ReactJS and <nobr>Back-End</nobr> Development with
-        Python. I enjoy working in a team and communicating.
+        A highly competent data scientist with experience of developing a wide
+        range of innovative machine learning and neural network models. Ability
+        to use data, statistics, machine learning for finding complex data
+        patterns that drive meaningful impact on the business. Excellent in
+        Natural Language Processing & Natural Language Understanding. Inventive
+        Front-End Development with ReactJS and <nobr>Back-End</nobr> Development
+        with NodeJS & Python. I enjoy working in a team and communicating.
       </Typography>
     </Box>
   )
