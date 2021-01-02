@@ -36,6 +36,12 @@ const useStyles = makeStyles((theme) => ({
   educationSection: {
     padding: "5%",
   },
+  activitySection: {
+    padding: "5%",
+    color: "white",
+    backgroundColor: "#02a9f7",
+    textAlign: "center",
+  },
   experienceSection: {
     padding: "5%",
   },
@@ -106,7 +112,7 @@ const Home = (props) => {
         <Grid item xs={12} className={classes.experienceSection}>
           <Experience />
         </Grid>
-        <Grid item xs={12} className={classes.introSection}>
+        <Grid item xs={12} className={classes.activitySection}>
           <Activities />
         </Grid>
         <Grid item xs={12} sm={12} className={classes.footerSection}>
