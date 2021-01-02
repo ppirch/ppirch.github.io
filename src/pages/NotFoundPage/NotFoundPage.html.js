@@ -12,11 +12,11 @@ module.exports = `
                 </div>
             <style>
             body {
-                background-color: #95c2de;
+                background-color: #89d6fb;
             }
             
             .mainbox {
-                background-color: #95c2de;
+                background-color: #89d6fb;
                 margin: auto;
                 height: 600px;
                 width: 600px;
