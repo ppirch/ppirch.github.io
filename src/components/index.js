@@ -1,1 +1,8 @@
+export { default as Activities } from "./Activities/Activities.jsx"
+export { default as BottomNav } from "./BottomNav/BottomNav.jsx"
+export { default as Experience } from "./Experience/Experience.jsx"
+export { default as Education } from "./Education/Education.jsx"
+export { default as Intro } from "./Intro/Intro.jsx"
 export { default as NavBar } from "./NavBar/NavBar.jsx"
+export { default as SkillCardDataSci } from "./SkillCardDataSci/SkillCardDataSci.jsx"
+export { default as SkillCardDev } from "./SkillCardDev/SkillCardDev.jsx"
