@@ -69,7 +69,7 @@ const Experience = (props) => {
             </Typography>
           </TimelineOppositeContent>
           <TimelineSeparator>
-            <TimelineDot color="error">
+            <TimelineDot color="inherit">
               <LaptopMac />
             </TimelineDot>
             <TimelineConnector />

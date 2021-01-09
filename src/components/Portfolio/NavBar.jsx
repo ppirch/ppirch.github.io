@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import {
   AppBar,
   Toolbar,
@@ -10,32 +10,26 @@ import {
   Dialog,
   DialogContent,
   DialogTitle,
+  Hidden,
+  List,
+  ListItem,
+  ListItemText,
+  ListItemAvatar,
+  withWidth,
 } from "@material-ui/core"
 import { makeStyles } from "@material-ui/core/styles"
 import { Link as LinkDOM } from "react-router-dom"
 
-import List from "@material-ui/core/List"
-import ListItem from "@material-ui/core/ListItem"
-import ListItemText from "@material-ui/core/ListItemText"
-import ListItemAvatar from "@material-ui/core/ListItemAvatar"
 import Avatar from "@material-ui/core/Avatar"
 import { Call, Mail, Place } from "@material-ui/icons"
-
 import PropTypes from "prop-types"
-
-const emails = ["username@gmail.com", "user02@gmail.com"]
-
+import MenuLeft from "./MenuLeft.jsx"
 function SimpleDialog(props) {
-  const { onClose, selectedValue, open } = props
-
-  const handleClose = () => {
-    onClose(selectedValue)
-  }
-
+  const { open, onClose } = props
   return (
     <Dialog
       open={open}
-      onClose={handleClose}
+      onClose={onClose}
       aria-labelledby="responsive-dialog-title"
     >
       <DialogTitle id="responsive-dialog-title">{"Contact Me"}</DialogTitle>
@@ -74,7 +68,6 @@ function SimpleDialog(props) {
 SimpleDialog.propTypes = {
   onClose: PropTypes.func.isRequired,
   open: PropTypes.bool.isRequired,
-  selectedValue: PropTypes.string.isRequired,
 }
 
 const HideOnScroll = (props) => {
@@ -109,69 +102,71 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 const Navbar = (props) => {
+  const { width } = props
   const classes = useStyles(props)
-  const [open, setOpen] = React.useState(false)
-  const [selectedValue, setSelectedValue] = React.useState(emails[1])
+
+  const [open, setOpen] = useState(false)
 
   const handleClickOpen = () => {
     setOpen(true)
   }
 
-  const handleClose = (value) => {
+  const handleClose = () => {
     setOpen(false)
-    setSelectedValue(value)
   }
+
   return (
     <HideOnScroll {...props}>
       <AppBar position="sticky" className={classes.appBar}>
         <Toolbar className={classes.toolBar}>
           <Typography variant="h4" className={classes.title}>
             <Link component={LinkDOM} to="/" color="inherit">
-              <b>PPirch</b>
+              <b>PPirch : {width}</b>
             </Link>
           </Typography>
           <Typography>
-            <Link
-              href=""
-              component={LinkDOM}
-              to="/demo"
-              className={classes.linkSpace}
-            >
-              Demo
-            </Link>
-            <Link
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://medium.com/@pakin.pirch"
-              className={classes.linkSpace}
-            >
-              Blog
-            </Link>
-            <Link
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://www.kaggle.com/pirchlearning"
-              className={classes.linkSpace}
-            >
-              Kaggle
-            </Link>
-            <Button
-              variant="outlined"
-              className={classes.linkSpace}
-              onClick={handleClickOpen}
-            >
-              Contact
-            </Button>
+            <Hidden smUp>
+              <MenuLeft handleClickOpen={handleClickOpen} />
+            </Hidden>
+            <Hidden xsDown>
+              <Link
+                href=""
+                component={LinkDOM}
+                to="/demo"
+                className={classes.linkSpace}
+              >
+                Demo
+              </Link>
+              <Link
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://medium.com/@pakin.pirch"
+                className={classes.linkSpace}
+              >
+                Blog
+              </Link>
+              <Link
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.kaggle.com/pirchlearning"
+                className={classes.linkSpace}
+              >
+                Kaggle
+              </Link>
+              <Button
+                variant="outlined"
+                className={classes.linkSpace}
+                onClick={handleClickOpen}
+              >
+                Contact
+              </Button>
+            </Hidden>
           </Typography>
-          <SimpleDialog
-            selectedValue={selectedValue}
-            open={open}
-            onClose={handleClose}
-          />
+          <SimpleDialog open={open} onClose={handleClose} />
         </Toolbar>
       </AppBar>
     </HideOnScroll>
   )
 }
 
-export default Navbar
+export default withWidth()(Navbar)

@@ -79,14 +79,14 @@ const Portfolio = (props) => {
   return (
     <Container maxWidth={false} style={{ padding: 0 }}>
       <Grid container>
-        <Grid item xs={0} sm={6} className={classes.headerSection}>
+        <Grid item sm={6} className={classes.headerSection}>
           <Avatar
             alt="Pakin Pirch"
             src={avatarIcon}
             className={classes.large}
           />
         </Grid>
-        <Grid item xs={0} sm={6} className={classes.headerSection}>
+        <Grid item sm={6} className={classes.headerSection}>
           <Typography className={classes.titleText}>
             Data Scientist <br />& Full Stack Developer
           </Typography>
