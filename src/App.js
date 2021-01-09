@@ -13,6 +13,7 @@ import {
   Dashboard,
   DemoLocationTag,
   Portfolio,
+  Demo,
 } from "./pages"
 import { PortfolioNavBar } from "./components"
 import { BasicRouteNav } from "./utils/RouteNav.jsx"
@@ -28,9 +29,20 @@ const App = () => {
             nav={PortfolioNavBar}
             exact
           />
-          <Route path="/demo/location-tag" component={DemoLocationTag} exact />
           <Route path="/album" component={Album} exact />
           <Route path="/blog" component={Blog} exact />
+          <BasicRouteNav
+            path="/demo"
+            component={Demo}
+            nav={PortfolioNavBar}
+            exact
+          />
+          <BasicRouteNav
+            path="/demo/location-tag"
+            component={DemoLocationTag}
+            nav={PortfolioNavBar}
+            exact
+          />
           <Route path="/checkout" component={Checkout} exact />
           <Route path="/pricing" component={Pricing} exact />
           <Route path="/signup" component={SignUp} exact />

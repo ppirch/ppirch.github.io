@@ -132,6 +132,14 @@ const Navbar = (props) => {
           </Typography>
           <Typography>
             <Link
+              href=""
+              component={LinkDOM}
+              to="/demo"
+              className={classes.linkSpace}
+            >
+              Demo
+            </Link>
+            <Link
               target="_blank"
               rel="noopener noreferrer"
               href="https://medium.com/@pakin.pirch"
