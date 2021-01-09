@@ -1,30 +1,47 @@
-import React, { Component } from "react"
+import React from "react"
 import { Switch, Route } from "react-router-dom"
-import { Home, NotFoundPage } from "./pages"
-import { NavBar } from "./components"
-import CssBaseline from "@material-ui/core/CssBaseline"
+import {
+  Album,
+  Blog,
+  Checkout,
+  SignIn,
+  SignInSide,
+  SignUp,
+  StickyFooter,
+  Pricing,
+  NotFoundPage,
+  Dashboard,
+  DemoLocationTag,
+  Portfolio,
+} from "./pages"
+import { PortfolioNavBar } from "./components"
+import { BasicRouteNav } from "./utils/RouteNav.jsx"
 
-const RouteWithNavBar = ({ component: Component, ...rest }) => {
+const App = () => {
   return (
-    <Route {...rest}>
-      <NavBar />
-      <Component />
-    </Route>
+    <React.Fragment>
+      <div className="App container">
+        <Switch>
+          <BasicRouteNav
+            path="/"
+            component={Portfolio}
+            nav={PortfolioNavBar}
+            exact
+          />
+          <Route path="/demo/location-tag" component={DemoLocationTag} exact />
+          <Route path="/album" component={Album} exact />
+          <Route path="/blog" component={Blog} exact />
+          <Route path="/checkout" component={Checkout} exact />
+          <Route path="/pricing" component={Pricing} exact />
+          <Route path="/signup" component={SignUp} exact />
+          <Route path="/signin" component={SignIn} exact />
+          <Route path="/signin-side" component={SignInSide} exact />
+          <Route path="/sticky-footer" component={StickyFooter} exact />
+          <Route path="/dashboard" component={Dashboard} exact />
+          <Route component={NotFoundPage} exact />
+        </Switch>
+      </div>
+    </React.Fragment>
   )
-}
-class App extends Component {
-  render() {
-    return (
-      <React.Fragment>
-        <CssBaseline />
-        <div className="App container">
-          <Switch>
-            <RouteWithNavBar path="/" component={Home} exact />
-            <Route component={NotFoundPage} exact />
-          </Switch>
-        </div>
-      </React.Fragment>
-    )
-  }
 }
 export default App
