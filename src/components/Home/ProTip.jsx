@@ -1,6 +1,6 @@
 import React from "react"
 import { makeStyles } from "@material-ui/core/styles"
-import { Link, SvgIcon, Typography } from "@material-ui/core"
+import { SvgIcon, Typography } from "@material-ui/core"
 
 function LightBulbIcon(props) {
   return (
