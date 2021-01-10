@@ -10,6 +10,7 @@ import {
 } from "@material-ui/core"
 import { Copyright } from "../../components"
 import { findSynonym } from "../../api/ppirch-ai-api"
+import ReactJson from "react-json-view"
 
 const DemoFindSynonym = () => {
   const [input, setInput] = useState("")
@@ -48,7 +49,7 @@ const DemoFindSynonym = () => {
         <Box>
           <pre>
             <Typography gutterBottom style={{ fontSize: 16 }}>
-              {JSON.stringify(result, null, 2)}
+              <ReactJson src={result} />
             </Typography>
           </pre>
         </Box>

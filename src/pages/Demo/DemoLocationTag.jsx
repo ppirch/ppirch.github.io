@@ -10,6 +10,7 @@ import {
 } from "@material-ui/core"
 import { Copyright } from "../../components"
 import { getLocationTag } from "../../api/ppirch-ai-api"
+import ReactJson from "react-json-view"
 
 const DemoLocationTag = () => {
   const [input, setInput] = useState("")
@@ -48,7 +49,7 @@ const DemoLocationTag = () => {
         <Box>
           <pre>
             <Typography gutterBottom style={{ fontSize: 16 }}>
-              {JSON.stringify(result, null, 2)}
+              <ReactJson src={result} />
             </Typography>
           </pre>
         </Box>
