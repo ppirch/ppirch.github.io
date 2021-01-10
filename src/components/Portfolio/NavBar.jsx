@@ -15,7 +15,6 @@ import {
   ListItem,
   ListItemText,
   ListItemAvatar,
-  withWidth,
 } from "@material-ui/core"
 import { makeStyles } from "@material-ui/core/styles"
 import { Link as LinkDOM } from "react-router-dom"
@@ -102,7 +101,6 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 const Navbar = (props) => {
-  const { width } = props
   const classes = useStyles(props)
 
   const [open, setOpen] = useState(false)
@@ -121,7 +119,7 @@ const Navbar = (props) => {
         <Toolbar className={classes.toolBar}>
           <Typography variant="h4" className={classes.title}>
             <Link component={LinkDOM} to="/" color="inherit">
-              <b>PPirch : {width}</b>
+              <b>PPirch</b>
             </Link>
           </Typography>
           <Typography>
@@ -169,4 +167,4 @@ const Navbar = (props) => {
   )
 }
 
-export default withWidth()(Navbar)
+export default Navbar
