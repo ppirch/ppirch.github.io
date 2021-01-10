@@ -76,7 +76,7 @@ const DemoLocationTag = () => {
             </Link>
           </Typography>
           <Typography gutterBottom>
-            ตัวอย่าง : มหาวิทยาลัยเชียงใหม่ 239 ถ. ห้วยแก้ว ตำบลสุเทพ
+            Example : มหาวิทยาลัยเชียงใหม่ 239 ถ. ห้วยแก้ว ตำบลสุเทพ
             อำเภอเมืองเชียงใหม่ เชียงใหม่ 50200
           </Typography>
           <TextareaAutosize
@@ -91,7 +91,7 @@ const DemoLocationTag = () => {
           Submit
         </Button>
         <Box my={2}>
-          <Typography gutterBottom>ผลลัพธ์ :</Typography>
+          <Typography gutterBottom>Result :</Typography>
           <Box>{renderResult()}</Box>
         </Box>
         <Copyright />

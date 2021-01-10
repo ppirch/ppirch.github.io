@@ -28,6 +28,12 @@ const rows = [
     detail: "Extract address information form thai sentence",
     link: "/demo/location-tag",
   },
+  {
+    id: 2,
+    name: "Synonym Finder",
+    detail: "Find the synonyms of thai word",
+    link: "/demo/find-synonym",
+  },
 ]
 
 export default function Demo() {

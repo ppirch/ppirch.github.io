@@ -14,6 +14,7 @@ import {
   DemoLocationTag,
   Portfolio,
   Demo,
+  DemoFindSynonym,
 } from "./pages"
 import { PortfolioNavBar } from "./components"
 import { BasicRouteNav } from "./utils/RouteNav.jsx"
@@ -40,6 +41,12 @@ const App = () => {
           <BasicRouteNav
             path="/demo/location-tag"
             component={DemoLocationTag}
+            nav={PortfolioNavBar}
+            exact
+          />
+          <BasicRouteNav
+            path="/demo/find-synonym"
+            component={DemoFindSynonym}
             nav={PortfolioNavBar}
             exact
           />
