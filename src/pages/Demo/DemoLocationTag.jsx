@@ -31,7 +31,6 @@ const DemoLocationTag = () => {
   }`
     render_bibx(pythaiCitationBibx).then((res) => {
       setPythaiCitation(res)
-      console.log(res)
     })
   }, [])
 
@@ -45,12 +44,10 @@ const DemoLocationTag = () => {
     setResult(false)
     getLocationTag(input)
       .then((data) => {
-        console.log(data)
         setResult(data)
         setLoading(false)
       })
       .catch((error) => {
-        console.log(error)
         setError(true)
         setLoading(false)
       })

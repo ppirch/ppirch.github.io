@@ -31,7 +31,6 @@ const DemoFindSynonym = () => {
   }`
     render_bibx(pythaiCitationBibx).then((res) => {
       setPythaiCitation(res)
-      console.log(res)
     })
   }, [])
   const handleChang = (event) => {
@@ -44,12 +43,10 @@ const DemoFindSynonym = () => {
     setResult(false)
     findSynonym(input)
       .then((data) => {
-        console.log(data)
         setResult(data)
         setLoading(false)
       })
       .catch((error) => {
-        console.log(error)
         setError(true)
         setLoading(false)
       })
