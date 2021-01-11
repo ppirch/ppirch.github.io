@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import {
   Container,
   Typography,
@@ -10,6 +10,7 @@ import {
 } from "@material-ui/core"
 import { Copyright } from "../../components"
 import { getLocationTag } from "../../api/ppirch-ai-api"
+import { render_bibx } from "../../utils/citation"
 import ReactJson from "react-json-view"
 
 const DemoLocationTag = () => {
@@ -17,6 +18,23 @@ const DemoLocationTag = () => {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(false)
   const [result, setResult] = useState(false)
+  const [pythaiCitation, setPythaiCitation] = useState("")
+  useEffect(() => {
+    const pythaiCitationBibx = `@misc{pythainlp,
+      author       = {Wannaphong Phatthiyaphaibun, Korakot Chaovavanich, Charin Polpanumas, Arthit Suriyawongkul, Lalita Lowphansirikul, Pattarawat Chormai},
+      title        = {{PyThaiNLP: Thai Natural Language Processing in Python}},
+      month        = Jun,
+      year         = 2016,
+      doi          = {10.5281/zenodo.3519354},
+      publisher    = {Zenodo},
+      url          = {http://doi.org/10.5281/zenodo.3519354}
+  }`
+    render_bibx(pythaiCitationBibx).then((res) => {
+      setPythaiCitation(res)
+      console.log(res)
+    })
+  }, [])
+
   const handleChang = (event) => {
     setInput(event.target.value)
   }
@@ -95,8 +113,12 @@ const DemoLocationTag = () => {
           <Typography gutterBottom>Result :</Typography>
           <Box>{renderResult()}</Box>
         </Box>
-        <Copyright />
+        <Box>
+          <Typography gutterBottom>References :</Typography>
+          {pythaiCitation}
+        </Box>
       </Box>
+      <Copyright />
     </Container>
   )
 }
