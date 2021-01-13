@@ -1,5 +1,5 @@
 import React from "react"
-import { Container, Typography, Box, Button } from "@material-ui/core"
+import { Container, Typography, Box, Button, Link } from "@material-ui/core"
 import { Copyright, ProTip } from "../../components"
 import { DataGrid } from "@material-ui/data-grid"
 import { Link as LinkDOM } from "react-router-dom"
@@ -14,7 +14,12 @@ const columns = [
     sortable: false,
     width: 160,
     renderCell: (params) => (
-      <Button to={params.value} component={LinkDOM} variant="outlined">
+      <Button
+        to={params.value}
+        href={params.value}
+        component={params.value.startsWith("http") ? Link : LinkDOM}
+        variant="outlined"
+      >
         Click
       </Button>
     ),
@@ -33,6 +38,12 @@ const rows = [
     name: "Synonym Finder",
     detail: "Find the synonyms of thai word",
     link: "/demo/find-synonym",
+  },
+  {
+    id: 3,
+    name: "Food2Calorie",
+    detail: "Predict food calorie from image",
+    link: "http://202.28.248.56/",
   },
 ]
 
