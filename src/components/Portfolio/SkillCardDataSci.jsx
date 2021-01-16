@@ -55,11 +55,11 @@ const SkillCardDataSci = (props) => {
             Technical skills:
           </Typography>
           <Typography className={classes.contentText}>
-            Machine Learning & Deep Learning
-            <br />
             Computer Vision
             <br />
             NLP & NLU
+            <br />
+            ML & DL
           </Typography>
         </CardContent>
       </Card>
