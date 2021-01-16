@@ -11,10 +11,10 @@ import {
   Pricing,
   NotFoundPage,
   Dashboard,
-  DemoLocationTag,
+  LocationTag,
   Portfolio,
-  Demo,
-  DemoFindSynonym,
+  Showcase,
+  FindSynonym,
 } from "./pages"
 import { PortfolioNavBar } from "./components"
 import { BasicRouteNav } from "./utils/RouteNav.jsx"
@@ -33,20 +33,20 @@ const App = () => {
           <Route path="/album" component={Album} exact />
           <Route path="/blog" component={Blog} exact />
           <BasicRouteNav
-            path="/demo"
-            component={Demo}
+            path="/showcase"
+            component={Showcase}
             nav={PortfolioNavBar}
             exact
           />
           <BasicRouteNav
-            path="/demo/location-tag"
-            component={DemoLocationTag}
+            path="/showcase/location-tag"
+            component={LocationTag}
             nav={PortfolioNavBar}
             exact
           />
           <BasicRouteNav
-            path="/demo/find-synonym"
-            component={DemoFindSynonym}
+            path="/showcase/find-synonym"
+            component={FindSynonym}
             nav={PortfolioNavBar}
             exact
           />

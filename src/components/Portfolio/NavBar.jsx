@@ -130,10 +130,10 @@ const Navbar = (props) => {
               <Link
                 href=""
                 component={LinkDOM}
-                to="/demo"
+                to="/showcase"
                 className={classes.linkSpace}
               >
-                Demo
+                Showcase
               </Link>
               <Link
                 target="_blank"

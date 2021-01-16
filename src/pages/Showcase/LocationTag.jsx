@@ -3,17 +3,17 @@ import {
   Container,
   Typography,
   Box,
-  TextField,
+  TextareaAutosize,
   Button,
   CircularProgress,
   Link,
 } from "@material-ui/core"
 import { Copyright } from "../../components"
-import { findSynonym } from "../../api/ppirch-ai-api"
+import { getLocationTag } from "../../api/ppirch-ai-api"
 import { render_bibx } from "../../utils/citation"
 import ReactJson from "react-json-view"
 
-const DemoFindSynonym = () => {
+const LocationTag = () => {
   const [input, setInput] = useState("")
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(false)
@@ -33,6 +33,7 @@ const DemoFindSynonym = () => {
       setPythaiCitation(res)
     })
   }, [])
+
   const handleChang = (event) => {
     setInput(event.target.value)
   }
@@ -41,7 +42,7 @@ const DemoFindSynonym = () => {
     setLoading(true)
     setError(false)
     setResult(false)
-    findSynonym(input)
+    getLocationTag(input)
       .then((data) => {
         setResult(data)
         setLoading(false)
@@ -74,10 +75,10 @@ const DemoFindSynonym = () => {
     <Container maxWidth="sm">
       <Box my={4}>
         <Typography variant="h4" component="h1" gutterBottom>
-          Synonym Finder
+          Thai Address Recognition
         </Typography>
         <Typography variant="h6" component="h1" gutterBottom>
-          ค้นหาคำที่มีความหมายเหมือนกันจาก Wordnet
+          สกัดที่อยู่จากข้อความภาษาไทยอัตโนมัติ
         </Typography>
 
         <Box my={2}>
@@ -90,9 +91,14 @@ const DemoFindSynonym = () => {
               https://ppirch-ai-api.herokuapp.com/docs
             </Link>
           </Typography>
-          <Typography gutterBottom>Example : หมา</Typography>
-          <TextField
-            placeholder="กรอกคำที่ต้องการลงช่องนี้"
+          <Typography gutterBottom>
+            Example : มหาวิทยาลัยเชียงใหม่ 239 ถ. ห้วยแก้ว ตำบลสุเทพ
+            อำเภอเมืองเชียงใหม่ เชียงใหม่ 50200
+          </Typography>
+          <TextareaAutosize
+            aria-label="minimum height"
+            rowsMin={5}
+            placeholder="กรอกข้อความภาษาไทยที่มีข้อมูลที่อยู่ลงช่องนี้"
             style={{ width: "100%", fontSize: 18 }}
             onChange={handleChang}
           />
@@ -114,4 +120,4 @@ const DemoFindSynonym = () => {
   )
 }
 
-export default DemoFindSynonym
+export default LocationTag

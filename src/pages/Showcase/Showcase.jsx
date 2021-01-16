@@ -31,13 +31,13 @@ const rows = [
     id: 1,
     name: "Thai Address Recognition",
     detail: "Extract address information form thai sentence",
-    link: "/demo/location-tag",
+    link: "/showcase/location-tag",
   },
   {
     id: 2,
     name: "Synonym Finder",
     detail: "Find the synonyms of thai word",
-    link: "/demo/find-synonym",
+    link: "/showcase/find-synonym",
   },
   {
     id: 3,
@@ -47,12 +47,12 @@ const rows = [
   },
 ]
 
-export default function Demo() {
+export default function Showcase() {
   return (
     <Container maxWidth="md">
       <Box my={4}>
         <Typography variant="h4" component="h1" gutterBottom>
-          Demo AI Application
+          Showcase
         </Typography>
         <div style={{ height: 400, width: "100%", margin: "5%" }}>
           <DataGrid

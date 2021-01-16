@@ -3,17 +3,17 @@ import {
   Container,
   Typography,
   Box,
-  TextareaAutosize,
+  TextField,
   Button,
   CircularProgress,
   Link,
 } from "@material-ui/core"
 import { Copyright } from "../../components"
-import { getLocationTag } from "../../api/ppirch-ai-api"
+import { findSynonym } from "../../api/ppirch-ai-api"
 import { render_bibx } from "../../utils/citation"
 import ReactJson from "react-json-view"
 
-const DemoLocationTag = () => {
+const FindSynonym = () => {
   const [input, setInput] = useState("")
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(false)
@@ -33,7 +33,6 @@ const DemoLocationTag = () => {
       setPythaiCitation(res)
     })
   }, [])
-
   const handleChang = (event) => {
     setInput(event.target.value)
   }
@@ -42,7 +41,7 @@ const DemoLocationTag = () => {
     setLoading(true)
     setError(false)
     setResult(false)
-    getLocationTag(input)
+    findSynonym(input)
       .then((data) => {
         setResult(data)
         setLoading(false)
@@ -75,10 +74,10 @@ const DemoLocationTag = () => {
     <Container maxWidth="sm">
       <Box my={4}>
         <Typography variant="h4" component="h1" gutterBottom>
-          Thai Address Recognition
+          Synonym Finder
         </Typography>
         <Typography variant="h6" component="h1" gutterBottom>
-          สกัดที่อยู่จากข้อความภาษาไทยอัตโนมัติ
+          ค้นหาคำที่มีความหมายเหมือนกันจาก Wordnet
         </Typography>
 
         <Box my={2}>
@@ -91,14 +90,9 @@ const DemoLocationTag = () => {
               https://ppirch-ai-api.herokuapp.com/docs
             </Link>
           </Typography>
-          <Typography gutterBottom>
-            Example : มหาวิทยาลัยเชียงใหม่ 239 ถ. ห้วยแก้ว ตำบลสุเทพ
-            อำเภอเมืองเชียงใหม่ เชียงใหม่ 50200
-          </Typography>
-          <TextareaAutosize
-            aria-label="minimum height"
-            rowsMin={5}
-            placeholder="กรอกข้อความภาษาไทยที่มีข้อมูลที่อยู่ลงช่องนี้"
+          <Typography gutterBottom>Example : หมา</Typography>
+          <TextField
+            placeholder="กรอกคำที่ต้องการลงช่องนี้"
             style={{ width: "100%", fontSize: 18 }}
             onChange={handleChang}
           />
@@ -120,4 +114,4 @@ const DemoLocationTag = () => {
   )
 }
 
-export default DemoLocationTag
+export default FindSynonym
