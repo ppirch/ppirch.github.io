@@ -138,7 +138,7 @@ const Navbar = (props) => {
               <Link
                 target="_blank"
                 rel="noopener noreferrer"
-                href="https://medium.com/@pakin.pirch"
+                href="https://medium.com/@pakin-pirch"
                 className={classes.linkSpace}
               >
                 Blog
