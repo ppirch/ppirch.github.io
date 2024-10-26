@@ -1,0 +1,8 @@
+# This is a blog post
+
+## Hello world
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit
+
+## Add image 
+![bug_bunny](/images/Bugs_Bunny.png)
