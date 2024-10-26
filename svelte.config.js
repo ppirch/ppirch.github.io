@@ -10,11 +10,7 @@ const config = {
 
 	kit: {
 		adapter: adapter({
-			pages: 'build',
-			assets: 'build',
-			fallback: 'app.html',
-			precompress: false,
-			strict: true
+			fallback: 'index.html'
 		}),
 		paths: {
 			base: process.env.NODE_ENV === 'production' ? process.env.BASE_PATH : ''
