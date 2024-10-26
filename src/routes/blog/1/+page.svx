@@ -1,8 +1,9 @@
-# This is a blog post
+# Hello world
 
-## Hello world
+## This is a test
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit
+This is a test of the emergency broadcast system.
 
-## Add image 
-![bug_bunny](/images/Bugs_Bunny.png)
+## This is only a test
+
+This is only a test.
