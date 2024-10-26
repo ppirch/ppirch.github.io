@@ -9,9 +9,7 @@ const config = {
 	preprocess: [vitePreprocess(), mdsvex()],
 
 	kit: {
-		adapter: adapter({
-			fallback: 'index.html'
-		}),
+		adapter: adapter(),
 		paths: {
 			base: process.env.NODE_ENV === 'production' ? process.env.BASE_PATH : ''
 		}
